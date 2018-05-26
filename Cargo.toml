@@ -1,0 +1,14 @@
+[package]
+name = "projecteuler"
+version = "0.1.0"
+authors = ["Honoré Vasconcelos <honore.vasconcelos@gmail.com>"]
+description = "Solving projecteuler.net challenges while learning Rust simultaneously."
+readme = "README.md"
+keywords = ["projecteuler", "math", "rust"]
+
+[dependencies]
+bencher = "0.1.4"
+
+[[bench]]
+name = "bench"
+harness = false
