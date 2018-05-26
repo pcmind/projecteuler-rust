@@ -37,14 +37,4 @@ mod tests {
     fn output_correct_value() {
         assert_eq!(6857, largest_prime_factor(600851475143));
     }
-
-    #[test]
-    fn iterator_only_output_prime_numbers() {
-        let mut p = PrimeIt::new(10);
-        assert_eq!(Some(2), p.next());
-        assert_eq!(Some(3), p.next());
-        assert_eq!(Some(5), p.next());
-        assert_eq!(Some(7), p.next());
-        assert_eq!(None, p.next());
-    }
 }
