@@ -30,8 +30,12 @@ fn problem4_sol1(b: &mut Bencher) {
     b.iter(||{problem4::get_highest_palindrome_generated_by_two_number_of_n_digits(3)});
 }
 
-fn problem4_optimal(b: &mut Bencher) {
+fn problem4_optimal_3_digits(b: &mut Bencher) {
     b.iter(||{problem4::get_highest_palindrome_optimally_generated_by_two_number_of_3_digits()});
+}
+
+fn problem4_brute_force_3_digits(b: &mut Bencher) {
+    b.iter(||{problem4::brute_force_approach_3_digits()});
 }
 
 benchmark_group!(
@@ -41,7 +45,8 @@ benchmark_group!(
     problem2_sol1,
     problem3_sol1,
     problem4_sol1,
-    problem4_optimal,
+    problem4_optimal_3_digits,
+    problem4_brute_force_3_digits,
     );
 
 benchmark_main!(bench);

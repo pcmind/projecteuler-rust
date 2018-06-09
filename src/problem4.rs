@@ -31,6 +31,24 @@ pub fn get_highest_palindrome_optimally_generated_by_two_number_of_3_digits() ->
     Some(largest_palindrome)
 }
 
+
+/// brute force approach of get_highest_palindrome_optimally_generated_by_two_number_of_3_digits
+pub fn brute_force_approach_3_digits() -> Option<u32>{
+    let mut largest_palindrome = 0;
+    let mut a = 100;
+    while a <= 999 {
+        let mut b = 100;
+        while b <= 999 {
+            if is_palindrome(a*b) && a*b > largest_palindrome {
+                largest_palindrome = a*b
+            }
+            b = b+1;
+        }
+        a = a+1;
+    }
+    Some(largest_palindrome)
+}
+
 #[derive(Debug)]
 struct Palindrome {
     //full value of palindrome
