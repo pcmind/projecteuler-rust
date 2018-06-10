@@ -8,6 +8,7 @@ use projecteuler::problem1;
 use projecteuler::problem2;
 use projecteuler::problem3;
 use projecteuler::problem4;
+use projecteuler::problem5;
 
 fn problem1_iterative(b: &mut Bencher) {
     b.iter(||{problem1::iterative_sum_of_divisible_by_3_and_5(500)});
@@ -38,6 +39,10 @@ fn problem4_brute_force_3_digits(b: &mut Bencher) {
     b.iter(||{problem4::brute_force_approach_3_digits()});
 }
 
+fn problem5_slo1(b: &mut Bencher) {
+    b.iter(||{problem5::smallest_multiple(20)});
+}
+
 benchmark_group!(
     bench, 
     problem1_iterative, 
@@ -47,6 +52,7 @@ benchmark_group!(
     problem4_sol1,
     problem4_optimal_3_digits,
     problem4_brute_force_3_digits,
+    problem5_slo1,
     );
 
 benchmark_main!(bench);
